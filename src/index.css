@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Food Delivery Design System - Futuristic Theme */
+
+@layer base {
+  :root {
+    --background: 220 26% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 16 100% 60%;
+    --primary-glow: 28 100% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 265 50% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 220 26% 7%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 16 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom food delivery colors */
+    --food-orange: 16 100% 60%;
+    --food-red: 0 85% 60%;
+    --food-amber: 45 100% 55%;
+    --food-purple: 265 50% 50%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(16 100% 60%), hsl(0 85% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(265 50% 50%), hsl(240 60% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 55%), hsl(35 100% 50%));
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    
+    /* Effects */
+    --shadow-glow: 0 0 30px hsl(16 100% 60% / 0.3);
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --blur-glass: blur(10px);
+
+    --sidebar-background: 220 20% 10%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 16 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 16 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-md border border-border/50 rounded-xl shadow-card;
+    background: var(--gradient-glass);
+  }
+
+  /* Animated gradient button */
+  .btn-gradient {
+    @apply bg-gradient-primary text-primary-foreground font-semibold py-3 px-6 rounded-lg shadow-glow;
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-glow;
+  }
+
+  /* Food item card hover effect */
+  .food-card {
+    @apply glass-card overflow-hidden transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-glow;
+  }
+
+  /* Smooth page transitions */
+  .page-transition {
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Loading spinner */
+  .spinner {
+    @apply inline-block w-8 h-8 border-4 border-primary/30 border-t-primary rounded-full;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+}
