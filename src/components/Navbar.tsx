@@ -24,7 +24,7 @@ const Navbar = () => {
       className="glass-card sticky top-0 z-50 px-6 py-4 mb-8"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/home" className="flex items-center gap-2 group">
           <div className="bg-gradient-primary p-2 rounded-lg group-hover:scale-110 transition-transform">
             <UtensilsCrossed className="w-6 h-6 text-primary-foreground" />
           </div>
