@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://online-food-management-new.onrender.com';
+const API_BASE_URL = 'https://new-backend-for-render.onrender.com';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
